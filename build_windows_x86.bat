@@ -35,29 +35,29 @@ if errorlevel 1 (
     exit /b 1
 )
 
-%PYTHON_CMD% -m PyInstaller --onefile --windowed --name "门店Excel智能处理工具_x86" app\main.py
+%PYTHON_CMD% -m PyInstaller --onefile --windowed --name "store_excel_tool_x86" app\main.py
 if errorlevel 1 (
     echo 窗口版打包失败，请把上面的错误信息发给开发人员。
     pause
     exit /b 1
 )
 
-%PYTHON_CMD% -m PyInstaller --onefile --console --name "门店Excel智能处理工具_x86_兼容版" app\main_cli.py
+%PYTHON_CMD% -m PyInstaller --onefile --console --name "store_excel_tool_x86_cli" app\main_cli.py
 if errorlevel 1 (
     echo 兼容版打包失败，请把上面的错误信息发给开发人员。
     pause
     exit /b 1
 )
 
-echo @echo off> dist\运行x86兼容版.bat
-echo cd /d %%~dp0>> dist\运行x86兼容版.bat
-echo 门店Excel智能处理工具_x86_兼容版.exe>> dist\运行x86兼容版.bat
-echo echo.>> dist\运行x86兼容版.bat
-echo echo 如果程序报错，请把 compat_error.log 或窗口内容发给开发人员。>> dist\运行x86兼容版.bat
-echo pause>> dist\运行x86兼容版.bat
+echo @echo off> dist\run_x86_cli.bat
+echo cd /d %%~dp0>> dist\run_x86_cli.bat
+echo store_excel_tool_x86_cli.exe>> dist\run_x86_cli.bat
+echo echo.>> dist\run_x86_cli.bat
+echo echo If there is an error, send compat_error.log or the window text to support.>> dist\run_x86_cli.bat
+echo pause>> dist\run_x86_cli.bat
 
 echo.
-echo 打包完成：dist\门店Excel智能处理工具_x86.exe
-echo 兼容版：dist\门店Excel智能处理工具_x86_兼容版.exe
-echo 兼容版启动器：dist\运行x86兼容版.bat
+echo 打包完成：dist\store_excel_tool_x86.exe
+echo 兼容版：dist\store_excel_tool_x86_cli.exe
+echo 兼容版启动器：dist\run_x86_cli.bat
 pause

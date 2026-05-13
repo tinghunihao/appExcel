@@ -39,15 +39,15 @@ build_windows.bat
 build_windows_x86.bat
 ```
 
-生成的程序在 `dist\门店Excel智能处理工具_x86.exe`。32 位老系统建议安装 32 位 Python 3.8。
+生成的程序在 `dist\store_excel_tool_x86.exe`。32 位老系统建议安装 32 位 Python 3.8。
 
 如果 32 位老系统打开窗口版时报 `_tkinter` 相关错误，请改用兼容版：
 
 ```text
-dist\门店Excel智能处理工具_x86_兼容版.exe
+dist\store_excel_tool_x86_cli.exe
 ```
 
-兼容版不依赖 Tkinter 窗口库，会用命令行菜单输入 Excel 路径和列名，Excel 处理逻辑与窗口版一致。
+兼容版不依赖 Tkinter 窗口库，会用命令行菜单输入 Excel 路径和列名，Excel 处理逻辑与窗口版一致。老系统请优先双击 `dist\run_x86_cli.bat` 启动，避免中文文件名和命令行字符集问题。
 
 ## Excel 要求
 
