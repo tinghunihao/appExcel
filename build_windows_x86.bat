@@ -37,11 +37,19 @@ if errorlevel 1 (
 
 %PYTHON_CMD% -m PyInstaller --onefile --windowed --name "门店Excel智能处理工具_x86" app\main.py
 if errorlevel 1 (
-    echo 打包失败，请把上面的错误信息发给开发人员。
+    echo 窗口版打包失败，请把上面的错误信息发给开发人员。
+    pause
+    exit /b 1
+)
+
+%PYTHON_CMD% -m PyInstaller --onefile --console --name "门店Excel智能处理工具_x86_兼容版" app\main_cli.py
+if errorlevel 1 (
+    echo 兼容版打包失败，请把上面的错误信息发给开发人员。
     pause
     exit /b 1
 )
 
 echo.
 echo 打包完成：dist\门店Excel智能处理工具_x86.exe
+echo 兼容版：dist\门店Excel智能处理工具_x86_兼容版.exe
 pause

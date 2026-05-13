@@ -41,9 +41,14 @@ jobs:
       - name: Build EXE
         run: |
           python -m PyInstaller --onefile --windowed --name "${{ matrix.exe-name }}" app\main.py
+          if ("${{ matrix.architecture }}" -eq "x86") {
+            python -m PyInstaller --onefile --console --name "门店Excel智能处理工具_x86_兼容版" app\main_cli.py
+          }
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact-name }}
-          path: dist/${{ matrix.exe-name }}.exe
+          path: |
+            dist/${{ matrix.exe-name }}.exe
+            dist/门店Excel智能处理工具_x86_兼容版.exe
