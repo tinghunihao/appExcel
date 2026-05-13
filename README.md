@@ -39,7 +39,7 @@ build_windows.bat
 build_windows_x86.bat
 ```
 
-生成的程序在 `dist\门店Excel智能处理工具_x86.exe`。32 位系统建议安装 32 位 Python 3.8 或 3.9。
+生成的程序在 `dist\门店Excel智能处理工具_x86.exe`。32 位老系统建议安装 32 位 Python 3.8。
 
 ## Excel 要求
 

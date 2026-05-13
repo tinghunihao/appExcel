@@ -15,11 +15,11 @@ jobs:
           - artifact-name: windows-x64-exe
             exe-name: 门店Excel智能处理工具
             architecture: x64
-            python-version: "3.11"
+            python-version: "3.8"
           - artifact-name: windows-x86-exe
             exe-name: 门店Excel智能处理工具_x86
             architecture: x86
-            python-version: "3.9"
+            python-version: "3.8"
 
     runs-on: windows-latest
 
