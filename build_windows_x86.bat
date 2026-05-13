@@ -49,7 +49,15 @@ if errorlevel 1 (
     exit /b 1
 )
 
+echo @echo off> dist\运行x86兼容版.bat
+echo cd /d %%~dp0>> dist\运行x86兼容版.bat
+echo 门店Excel智能处理工具_x86_兼容版.exe>> dist\运行x86兼容版.bat
+echo echo.>> dist\运行x86兼容版.bat
+echo echo 如果程序报错，请把 compat_error.log 或窗口内容发给开发人员。>> dist\运行x86兼容版.bat
+echo pause>> dist\运行x86兼容版.bat
+
 echo.
 echo 打包完成：dist\门店Excel智能处理工具_x86.exe
 echo 兼容版：dist\门店Excel智能处理工具_x86_兼容版.exe
+echo 兼容版启动器：dist\运行x86兼容版.bat
 pause

@@ -43,6 +43,12 @@ jobs:
           python -m PyInstaller --onefile --windowed --name "${{ matrix.exe-name }}" app\main.py
           if ("${{ matrix.architecture }}" -eq "x86") {
             python -m PyInstaller --onefile --console --name "门店Excel智能处理工具_x86_兼容版" app\main_cli.py
+            "@echo off" | Out-File -Encoding ascii "dist\运行x86兼容版.bat"
+            "cd /d %~dp0" | Out-File -Encoding ascii -Append "dist\运行x86兼容版.bat"
+            "门店Excel智能处理工具_x86_兼容版.exe" | Out-File -Encoding ascii -Append "dist\运行x86兼容版.bat"
+            "echo." | Out-File -Encoding ascii -Append "dist\运行x86兼容版.bat"
+            "echo 如果程序报错，请把 compat_error.log 或窗口内容发给开发人员。" | Out-File -Encoding default -Append "dist\运行x86兼容版.bat"
+            "pause" | Out-File -Encoding ascii -Append "dist\运行x86兼容版.bat"
           }
 
       - name: Upload EXE
@@ -52,3 +58,4 @@ jobs:
           path: |
             dist/${{ matrix.exe-name }}.exe
             dist/门店Excel智能处理工具_x86_兼容版.exe
+            dist/运行x86兼容版.bat
